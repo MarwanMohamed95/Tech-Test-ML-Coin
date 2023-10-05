@@ -1,39 +1,27 @@
-![Company Logo](https://aitaca.io/wp-content/uploads/2020/01/logo_loading.png)
-# Task Instruction: Coin Segmentation in Images (Background removal)
-### Task Description
-Your task is to develop a model or method for segmenting coins from images and produces accurate results. This means isolating the coin by removing the background. The dataset will be provided by Aitaca. 
+**Coin Detection with U-Net**
 
-### Requirements
+## Task
 
-1. **Dataset:** You should use this dataset for training and testing your model/method.  **Pay special attention to the accuracy when removing the background, avoiding noise in the contouring.** The dataset can be accessed via the following Google Drive link: [https://drive.google.com/file/d/1cF-u9N7miok5-KUiriTdvA62edxIs1I_](https://drive.google.com/file/d/1cF-u9N7miok5-KUiriTdvA62edxIs1I_). Make sure to download and use this dataset for your task. Model is supposed to remove the background as in the images given in the dataset.
-   
-<div align="center">
-  <img src="https://github.com/aitacaremote/Tech-Test-ML-Coin/blob/c7427b05070c35ebd5ba9b14e9342e8807dbc66d/good.jpg" alt="Example Good Image" width="200" />
-  <p><em>Figure 1: Example of a good segmentation</em></p>
-</div>
+Welcome to the "Coin Detection with U-Net" project! In this project, we wil make implementation of coin detection using semantic segmentation.
+we used two different model:
+1. The first one is by building a U-Net model from scratch.
+2. The second one is by using transfer learning by using VGG16 pre-trained model for the encoder part, implemented and trained the decoder part.
 
-<div align="center">
-  <img src="https://github.com/aitacaremote/Tech-Test-ML-Coin/blob/c7427b05070c35ebd5ba9b14e9342e8807dbc66d/bad.jpg" alt="Example Bad Image" width="200" />
-  <p><em>Figure 2: Example of a bad segmentation</em></p>
-</div>
+### Below is a general overview about the structure of every notebook (method)
+**Project Overview:**
 
+1. **Data Preparation:** We'll start by loading and preparing our dataset, which includes images of coins and their corresponding masks. Applying Data preprocessing for the images and masks.
 
-3. **Programming Language:** You should use Python for this task. You can choose to work in a Python notebook (e.g., Jupyter Notebook) or submit a Python script.
+2. **U-Net Architecture:** Here we implemented the U-Net model.
 
-4. **Methods:** You are free to choose any methods you see fit to achieve accurate coin segmentation. This may include neural networks, image processing techniques, or a combination of both.
+3. **Model Training:** Training the model. We'll train our U-Net on the coin dataset, monitor its performance.
 
-5. **Submission:**
-   - Ensure that your code is organized and includes all necessary components for the task. If you use any data processing steps as part of your solution, include that code as well.
-   - If you choose to work with neural networks, please submit the trained model along with the code used for training.
-   - If you find and use pre-trained neural networks, include the details and sources of those networks.
-   - Include a part in your code where you visualize the segmentation results on a subset of the dataset's images.
+4. **Prediction and Post-processing:** Once our model is trained, we'll use it to make predictions on new coin images. We'll also apply post-processing techniques, such as morphological operations, to refine our coin segmentations.
 
-6. **Code Documentation:** Ensure that your code includes documentation, comments, and a separate README file that explains how to use your code and details the submitted code, including any specific dependencies or setup instructions. If your code relies on specific data folder structures or arrangements, please provide an explanation in the README file about how the data should be organized within the repository.
+5. **Visualization:** Visualizing the results is essential for understanding how well our model is performing. We'll create visualizations that show both the input images and the model's coin predictions.
 
-7. **Submission Format:** You must fork this respository and upload all your work to the fork repository.
+6. **Coin Detection in Action:** We'll apply our trained model to real-world scenarios, demonstrating its ability to detect and segment coins accurately.
 
-8. **Contact Information:** If you have any questions or need clarification regarding the task, please contact [tech@aitaca.io](mailto:tech@aitaca.io).
+**Why U-Net?**
 
-9. **Confidentiality:** Please ensure that you respect any confidentiality agreements or data usage restrictions related to the dataset provided.
-
-We look forward to reviewing your work and assessing your skills as a Machine Learning Engineer. Good luck with the task!
+U-Net is a popular choice for image segmentation tasks because of its architecture, which combines contracting and expansive pathways, making it highly effective at capturing fine-grained details in images.
